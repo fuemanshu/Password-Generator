@@ -28,10 +28,16 @@
             const userPasswordLengthInput = inputElement.value;
             
             // store value in JS variable
-            let passwordLength = userPasswordLengthInput;
+            // store value in JS variable as a Number
+            let passwordLength = Number(userPasswordLengthInput);
 
-            // display value
-            console.log("Password length = ", passwordLength);
+            // validate passwordLength is a number
+            if (passwordLength < 1) {
+                console.log("Invalid Entry. Please enter a number.")
+            } else if (passwordLength > 0) {
+                // display value or error message based on user input
+                console.log("Password length = ", passwordLength);
+            }
         });
  </script>
 
