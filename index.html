@@ -14,7 +14,7 @@
 <input type="text" id="jsNumericInput" maxlength="3" name="jsNumericInput" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 <button id="submitButton">Generate Password</button>
 
-<!-- Store user password length so we can use it-->
+<!-- On Click this script will retrieve user input, create an array for the password, then generate a random password -->
  <script>
         // get reference for user inputElement
         const inputElement = document.getElementById('jsNumericInput');
@@ -30,24 +30,35 @@
             // store value in JS variable as a Number
             let passwordLength = Number(userPasswordLengthInput);
 
-            // validate passwordLength is a number
+            // validate passwordLength is a number or valid entry
+            // display error message if entry incorrect or generate password on correct entry
             if (passwordLength < 1) {
                 console.log("Invalid Entry. Please enter a number.")
             } else if (passwordLength > 0) {
-                // display value or error message based on user input
+                // display user input value
                 console.log("Password length = ", passwordLength);
 
                 // Get the length of the password and turn it into an array to generate the random password
                 let passwordLengthArray = new Array(passwordLength);
 
-                // print array length
+                // display array length
                 console.log("Array Length = ", passwordLengthArray);
 
-                // display each array value - for testing
+                // password variable
+                let randomPassword = "";
+                
+                // available characters for password generation
+                const availableCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()<>/?[]{}-=_+';
+                
+                // generate random password and display for testing
                 for (let i = 0; i < passwordLengthArray.length; i++) {
-                    passwordLengthArray[i] = i;
-                    console.log(passwordLengthArray[i]);
+                    const randomCharacter = Math.floor(Math.random() * availableCharacters.length);
+                    
+                    // combine the characters together
+                    randomPassword += availableCharacters.charAt(randomCharacter);
                 }
+                // display password for testing
+                console.log(randomPassword);
             }
         });
  </script>
