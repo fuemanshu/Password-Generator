@@ -9,15 +9,15 @@
 <!-- This app generates a random password with a length based on user input -->
 <body>
 
-<!-- Ask for password character length -->
+<!-- Ask for password character length and only allow whole numbers from 1-999 to be entered-->
 <label>Password Length</label>
-<input type="text" id="userInput" placeholder="Enter max length">
-<button id="submitButton">Submit</button>
+<input type="text" id="jsNumericInput" maxlength="3" name="jsNumericInput" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+<button id="submitButton">Generate Password</button>
 
 <!-- Store user password length so we can use it-->
  <script>
         // get reference for user inputElement
-        const inputElement = document.getElementById('userInput');
+        const inputElement = document.getElementById('jsNumericInput');
 
         // get a reference to the button - to trigger storage
         const submitButton = document.getElementById('submitButton');
