@@ -1,0 +1,19 @@
+MVP 1.0
+
+Ask user for password length (max characters)
+Ask user for character selection
+- alphabet, lower/upper case, numbers, special characters on numbers, other special characters
+- repeating characters (boolean)
+- removal of any characters
+- allow repeat characters - but not successively
+Generate password button
+- default (uses all characters available)
+- resets after a certain time period for some security measure - timer shown
+	- give prompt after time expires
+- passwords are not saved within app
+- no copying of password - user must write down somewhere else
+- show possible combinations based on settings (Permutations)
+
+
+MVP 1.1
+- encryption
