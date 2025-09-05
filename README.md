@@ -21,9 +21,14 @@ App is at MVP 1.0
 - Password Generator Web App Zip file added for non develops to use/test
 - Directions
     - Download Zip File
+        - click on "PasswordGeneratorWebApp.zip" file
+        - on the next screen next to the search "go to file" box on the right click on the three dots and click on "Download"
+        - download to desired location
     - extract files
     - open "index.html" file in a web browser
     - enter your password length
     - click "Generate Password" button
 
+
+To down
 Developer Ending Statement - Any questions or comments please let me know. Use at your own Peril....
