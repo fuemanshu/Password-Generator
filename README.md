@@ -5,7 +5,7 @@ Password Generator App
 This app generates a random password using a combination of characters from numbers, letters, and special characters.
 
 ## Technologies Used
-* **Frontend:** HTML, Java Script
+* **Frontend:** HTML, JavaScript
 
 090225
 Currently in Brainstorm Phase
