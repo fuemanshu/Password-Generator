@@ -16,4 +16,11 @@ Generate password button
 
 
 MVP 1.1
-- encryption
+- Add options to specify characters
+- minimum space between repeating characters
+- add message for user to write down password
+	- add "clear/reset" button"
+
+MVP 1.2
+- Encryption
+- reset/refresh after a time period for security purposes
