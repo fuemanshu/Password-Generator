@@ -10,8 +10,21 @@
 <body>
 
 <!-- Ask for password character length and only allow whole numbers from 1-999 to be entered-->
-<label>Password Length</label>
-<input type="text" id="jsNumericInput" maxlength="3" name="jsNumericInput" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+<h2>Provide your Password Requirements</h2>
+
+<!-- Password Options Form-->
+<form>
+    <!-- Length -->
+    <label>Password Length &nbsp; </label>
+    <input type="text" id="jsNumericInput" maxlength="3" name="jsNumericInput" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+    <br><br>
+
+    <!-- Letters Selction Checkbox-->
+    <input type="checkbox" id="lettersSelection" checked>
+    <label>Upper and Lower Case Letters</label>
+
+</form>
+
 <button id="submitButton">Generate Password</button>
 
 <br><br>
@@ -20,7 +33,15 @@
 <!-- On Click this script will retrieve user input, create an array for the password, then generate a random password -->
  <script>
         // get reference for user inputElement
-        const inputElement = document.getElementById('jsNumericInput');
+        const inputElementPasswordLength = document.getElementById('jsNumericInput');
+
+        // get reference for password letters input Checkbox
+         const checkboxInputLetters = document.getElementById('lettersSelection');
+         if (checkboxInputLetters.checked) {
+            console.log("checked");
+         } else {
+            console.log("not checked");
+         }
 
         // get a reference to the button - to trigger storage
         const submitButton = document.getElementById('submitButton');
@@ -28,7 +49,7 @@
         // event listener to trigger storage
         submitButton.addEventListener('click', () => {
             // get value entered by user
-            const userPasswordLengthInput = inputElement.value;
+            const userPasswordLengthInput = inputElementPasswordLength.value;
             
             // store value in JS variable as a Number
             let passwordLength = Number(userPasswordLengthInput);
@@ -36,7 +57,10 @@
             // validate passwordLength is a number or valid entry
             // display error message if entry incorrect or generate password on correct entry
             if (passwordLength < 1) {
-                console.log("Invalid Entry. Please enter a number.")
+                // display new password on the web app
+                document.getElementById("newPasswordDisplay").innerText = "Invalid entry, try again.";
+                console.log("Invalid Entry, try again.");
+
             } else if (passwordLength > 0) {
                 // display user input value
                 console.log("Password length = ", passwordLength);
@@ -49,6 +73,9 @@
 
                 // password variable
                 let randomPassword = "";
+                
+                // set variable for password letters
+                // if ()
                 
                 // letters variable
                 const passwordLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -73,7 +100,7 @@
                 console.log(randomPassword);
 
                 // display new password on the web app
-                document.getElementById("newPasswordDisplay").innerText = "Try this Password:  " + randomPassword;
+                document.getElementById("newPasswordDisplay").innerText = "Try this Password: " + randomPassword;
             }
         });
  </script>
