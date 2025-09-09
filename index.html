@@ -46,21 +46,9 @@
 
         // get reference for password letters input Checkbox
          const checkboxInputLetters = document.getElementById('lettersSelection');
-         // debug letters checkbox
-         if (checkboxInputLetters.checked) {
-            console.log("letters checked");
-         } else {
-            console.log("letters not checked");
-         }
 
-         // get reference for numbers input Checkbox
-         const checkboxInputNumbers = document.getElementById('numbersSelection');
-         //debug numbers checkbox
-         if (checkboxInputNumbers.checked) {
-            console.log("numbers checked");
-         } else {
-            console.log("numbers not checked");
-         }
+        // get reference for numbers input Checkbox
+        const checkboxInputNumbers = document.getElementById('numbersSelection');
 
         // get a reference to the button - to trigger storage
         const submitButton = document.getElementById('submitButton');
@@ -72,6 +60,25 @@
             
             // store value in JS variable as a Number
             let passwordLength = Number(userPasswordLengthInput);
+
+            // password letters variable
+            let passwordLetters = "";
+            
+            // debug letters checkbox
+            if (checkboxInputLetters.checked) {
+                console.log("letters checked");
+                passwordLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            } else {
+                console.log("letters not checked");
+            }
+
+            //debug numbers checkbox
+            if (checkboxInputNumbers.checked) {
+                console.log("numbers checked");
+            } else {
+                console.log("numbers not checked");
+            }
+
 
             // validate passwordLength is a number or valid entry
             // display error message if entry incorrect or generate password on correct entry
@@ -97,7 +104,7 @@
                 // if ()
                 
                 // letters variable
-                const passwordLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                // const passwordLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
                 
                 // numbers variable
                 const passwordNumbers = '1234567890';
