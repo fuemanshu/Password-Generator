@@ -50,8 +50,17 @@
                 // password variable
                 let randomPassword = "";
                 
+                // letters variable
+                const passwordLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                
+                // numbers variable
+                const passwordNumbers = '1234567890';
+
+                // special characters variable
+                const passwordSpecialCharacters = '!@#$%^&*()<>/?[]{}-=_+';
+
                 // available characters for password generation
-                const availableCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()<>/?[]{}-=_+';
+                const availableCharacters = passwordLetters + passwordNumbers + passwordSpecialCharacters;
                 
                 // generate random password and display for testing
                 for (let i = 0; i < passwordLengthArray.length; i++) {
