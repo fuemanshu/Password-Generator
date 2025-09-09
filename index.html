@@ -26,11 +26,13 @@
 
     <!-- Numbers Selection Checkbox-->
     <input type="checkbox" id="numbersSelection" checked>
-    <label>Numbers 0-9</label>
+    <label>Numbers</label>
     <br><br>
 
-
-
+    <!-- Special Characters Selection Checkbox -->
+    <input type="checkbox" id="specialCharactersSelection" checked>
+    <label>Special Characters </label>
+    <br><br>
 
 </form>
 
@@ -50,6 +52,9 @@
         // get reference for numbers input Checkbox
         const checkboxInputNumbers = document.getElementById('numbersSelection');
 
+        // get reference for special characters input Checkbox
+        const checkboxInputSpecialCharacters = document.getElementById('specialCharactersSelection');
+
         // get a reference to the button - to trigger storage
         const submitButton = document.getElementById('submitButton');
         
@@ -66,6 +71,9 @@
 
             // numbers variable
             let passwordNumbers = "";
+
+            // special characters variable
+            let passwordSpecialCharacters = "";
             
             // set letters variable if checkbox is checked
             if (checkboxInputLetters.checked) {
@@ -83,6 +91,13 @@
                 console.log("numbers not checked");
             }
 
+            // set special character variable
+            if (checkboxInputSpecialCharacters.checked) {
+                console.log("special characters checked");
+                passwordSpecialCharacters = "!@#$%^&*()<>/?[]{}-=_+";
+            } else {
+                console.log("special characters not checked");
+            }
 
             // validate passwordLength is a number or valid entry
             // display error message if entry incorrect or generate password on correct entry
@@ -103,9 +118,6 @@
 
                 // password variable
                 let randomPassword = "";
-
-                // special characters variable
-                const passwordSpecialCharacters = '!@#$%^&*()<>/?[]{}-=_+';
 
                 // available characters for password generation
                 const availableCharacters = passwordLetters + passwordNumbers + passwordSpecialCharacters;
