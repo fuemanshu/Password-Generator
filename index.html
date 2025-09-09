@@ -61,10 +61,13 @@
             // store value in JS variable as a Number
             let passwordLength = Number(userPasswordLengthInput);
 
-            // password letters variable
+            // declare password letters variable
             let passwordLetters = "";
+
+            // numbers variable
+            let passwordNumbers = "";
             
-            // debug letters checkbox
+            // set letters variable if checkbox is checked
             if (checkboxInputLetters.checked) {
                 console.log("letters checked");
                 passwordLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -72,9 +75,10 @@
                 console.log("letters not checked");
             }
 
-            //debug numbers checkbox
+            //set numbers variable if checkbox is checked
             if (checkboxInputNumbers.checked) {
                 console.log("numbers checked");
+                passwordNumbers = "1234567890";
             } else {
                 console.log("numbers not checked");
             }
@@ -99,15 +103,6 @@
 
                 // password variable
                 let randomPassword = "";
-                
-                // set variable for password letters
-                // if ()
-                
-                // letters variable
-                // const passwordLetters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                
-                // numbers variable
-                const passwordNumbers = '1234567890';
 
                 // special characters variable
                 const passwordSpecialCharacters = '!@#$%^&*()<>/?[]{}-=_+';
