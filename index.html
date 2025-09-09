@@ -22,6 +22,15 @@
     <!-- Letters Selction Checkbox-->
     <input type="checkbox" id="lettersSelection" checked>
     <label>Upper and Lower Case Letters</label>
+    <br><br>
+
+    <!-- Numbers Selection Checkbox-->
+    <input type="checkbox" id="numbersSelection" checked>
+    <label>Numbers 0-9</label>
+    <br><br>
+
+
+
 
 </form>
 
@@ -37,10 +46,20 @@
 
         // get reference for password letters input Checkbox
          const checkboxInputLetters = document.getElementById('lettersSelection');
+         // debug letters checkbox
          if (checkboxInputLetters.checked) {
-            console.log("checked");
+            console.log("letters checked");
          } else {
-            console.log("not checked");
+            console.log("letters not checked");
+         }
+
+         // get reference for numbers input Checkbox
+         const checkboxInputNumbers = document.getElementById('numbersSelection');
+         //debug numbers checkbox
+         if (checkboxInputNumbers.checked) {
+            console.log("numbers checked");
+         } else {
+            console.log("numbers not checked");
          }
 
         // get a reference to the button - to trigger storage
