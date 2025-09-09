@@ -21,6 +21,17 @@ MVP 1.1
 - add message for user to write down password
 	- add "clear/reset" button"
 
+	Steps for specifying characters to generate password
+		- form that gets user input
+		- input options
+			- upper/lower case letters and numbers are selected by default
+			- speical characters are optional (add note to recommend)
+			- form input for removal of any specific characters
+	
+	Clear/Reset button
+		- clears the current password but leaves current options selected
+		
+
 MVP 1.2
 - Encryption
 - reset/refresh after a time period for security purposes
