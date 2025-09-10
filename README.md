@@ -1,5 +1,5 @@
 # Password Generator
-Password Generator App
+Password Generator App (DESKTOP Only)
 
 
 This app generates a random password using a combination of characters from numbers, letters, and special characters.
@@ -18,16 +18,32 @@ App is at MVP 1.0
 
 090525
 - Password Generator Web App Zip file added for non develops to use/test
-- Directions
-    - Download Zip File
+
+090825
+- brainstormed some ideas and wrote the algorithm for MVP 1.1
+
+090925
+- added the following features
+    - checkboxes for lower and upper case letters, numbers, and special characters
+    - add form field for any characters that need to be removed from available characters
+        - this allows for users to tailor the available characters to their needs
+    - added a reset button that refreshes the app
+    - also cleaned up the code and comments
+    - added some minor instructions to help users know what to fill out
+        - Asked my roomate, Gary, to test the app and provide some feedback
+            - feedback - add instructions, encryption, and add ability to save passwords
+
+- Directions for use (DESKTOP Only)
+    - Download "PasswordGeneratorWebApp1-1" Zip File
         - click on "PasswordGeneratorWebApp.zip" file
-        - on the next screen next to the search "go to file" box on the right click on the three dots and click on "Download"
-        - download to desired location
-    - extract files
+        - on the next screen next to the search icon "go to file" box on the right click on the three dots and click on "Download"
+        - download to desired location on your computer
+    - extract files from zip file
     - open "index.html" file in a web browser
-    - enter your password length
+    - provide your password requirements
     - click "Generate Password" button
+    - write down your password
+    - click "Reset" button the clear the app
 
 
-To down
 Developer Ending Statement - Any questions or comments please let me know. Use at your own Peril....
