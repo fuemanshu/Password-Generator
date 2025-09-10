@@ -34,6 +34,10 @@
     <label>Special Characters </label>
     <br><br>
 
+    <label>Characters not to be used &nbsp;</label>
+    <input type="text" id="charactersToRemove" name="charactersToRemove">
+    <br><br>
+
 </form>
 
 <button id="submitButton">Generate Password</button>
@@ -47,13 +51,16 @@
         const inputElementPasswordLength = document.getElementById('jsNumericInput');
 
         // get reference for password letters input Checkbox
-         const checkboxInputLetters = document.getElementById('lettersSelection');
+        const checkboxInputLetters = document.getElementById('lettersSelection');
 
         // get reference for numbers input Checkbox
         const checkboxInputNumbers = document.getElementById('numbersSelection');
 
         // get reference for special characters input Checkbox
         const checkboxInputSpecialCharacters = document.getElementById('specialCharactersSelection');
+
+        // get a reference for characters not to be used
+        const inputCharactersToRemove = document.getElementById('charactersToRemove');
 
         // get a reference to the button - to trigger storage
         const submitButton = document.getElementById('submitButton');
@@ -74,6 +81,10 @@
 
             // special characters variable
             let passwordSpecialCharacters = "";
+
+            // characters to remove
+            const charactersToRemove = inputCharactersToRemove.value;
+            console.log("Characters to Remove: " + charactersToRemove);
             
             // set letters variable if checkbox is checked
             if (checkboxInputLetters.checked) {
