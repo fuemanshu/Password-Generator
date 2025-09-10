@@ -39,6 +39,7 @@
     <br><br>
 
 </form>
+<br>
 
 <button id="submitButton">Generate Password</button>
 
@@ -85,12 +86,9 @@
             // characters to remove and length
             const charactersToRemove = inputCharactersToRemove.value;
             const charactersToRemoveLength = charactersToRemove.length;
-            console.log("The Characters to Remove are: " + charactersToRemove);
-            console.log("Length of Characters to Remove is: " + charactersToRemoveLength);
             
             // set letters variable if checkbox is checked
             if (checkboxInputLetters.checked) {
-                console.log("letters checked");
                 passwordLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             } else {
                 console.log("letters not checked");
@@ -98,7 +96,6 @@
 
             //set numbers variable if checkbox is checked
             if (checkboxInputNumbers.checked) {
-                console.log("numbers checked");
                 passwordNumbers = "1234567890";
             } else {
                 console.log("numbers not checked");
@@ -106,7 +103,6 @@
 
             // set special character variable
             if (checkboxInputSpecialCharacters.checked) {
-                console.log("special characters checked");
                 passwordSpecialCharacters = "!@#$%^&*()<>/?[]{}-=_+";
             } else {
                 console.log("special characters not checked");
@@ -120,26 +116,16 @@
                 console.log("Invalid Entry, try again.");
 
             } else if (passwordLength > 0) {
-                // display user input value
-                console.log("Password length = ", passwordLength);
-
                 // Get the length of the password and turn it into an array to generate the random password
                 let passwordLengthArray = new Array(passwordLength);
 
-                // display array length
-                console.log("Array Length = ", passwordLengthArray);
-
                 // take characters to remove and put into an array
                 let charactersToRemoveArray = new Array(charactersToRemoveLength);
-                console.log("Characters Array Length: ", charactersToRemoveArray.length);
 
                     // set up characters to remove array
                     for (let i = 0; i < charactersToRemoveArray.length; i++) {
                         charactersToRemoveArray[i] = charactersToRemove[i];
                     }
-                
-                // debug
-                console.log(charactersToRemoveArray);
 
                 // password variable
                 let randomPassword = "";
@@ -152,29 +138,44 @@
 
                 // remove characters user wants to remove
                 if (charactersToRemoveArray.length > 0) {
-                    console.log("there are characters to compare");
-
                     for (let i = 0; i < charactersToRemoveArray.length; i++) {
                         finalAvailableCharacters = availableCharacters.replace(charactersToRemoveArray[i], "");
                         availableCharacters = finalAvailableCharacters;
-                        console.log(i + " - " + finalAvailableCharacters);
                     }
+
+                    // generate random password and display for testing
+                    for (let i = 0; i < passwordLengthArray.length; i++) {
+                        finalAvailableCharacters = availableCharacters;
+                        
+                        const randomCharacter = Math.floor(Math.random() * finalAvailableCharacters.length);
+
+                        // combine the characters together
+                        randomPassword += finalAvailableCharacters.charAt(randomCharacter);
+                    }
+                    // display password for testing
+                    console.log(randomPassword);
+
+                    // display new password on the web app
+                    document.getElementById("newPasswordDisplay").innerText = "Try this Password: " + randomPassword;
+
                 } else {
-                    console.log("there are NO characters to compare");
+                    console.log("there are NO characters to remove");
+
+                    // generate random password and display for testing
+                    for (let i = 0; i < passwordLengthArray.length; i++) {
+                        finalAvailableCharacters = availableCharacters;
+
+                        const randomCharacter = Math.floor(Math.random() * finalAvailableCharacters.length);
+
+                        // combine the characters together
+                        randomPassword += finalAvailableCharacters.charAt(randomCharacter);                      
+                    }
+                    // display password for testing
+                    console.log(randomPassword);
+
+                    // display new password on the web app
+                    document.getElementById("newPasswordDisplay").innerText = "Try this Password: " + randomPassword;
                 }
-
-                // generate random password and display for testing
-                for (let i = 0; i < passwordLengthArray.length; i++) {
-                    const randomCharacter = Math.floor(Math.random() * finalAvailableCharacters.length);
-
-                    // combine the characters together
-                    randomPassword += finalAvailableCharacters.charAt(randomCharacter);
-                }
-                // display password for testing
-                console.log(randomPassword);
-
-                // display new password on the web app
-                document.getElementById("newPasswordDisplay").innerText = "Try this Password: " + randomPassword;
             }
         });
  </script>
