@@ -30,7 +30,7 @@ App is at MVP 1.0
     - added a reset button that refreshes the app
     - also cleaned up the code and comments
     - added some minor instructions to help users know what to fill out
-        - Asked my roomate, Gary, to test the app and provide some feedback
+        - Asked one of my roommate, to test the app and provide some feedback
             - feedback - add instructions, encryption, and add ability to save passwords
 
 - Directions for use (DESKTOP Only)
