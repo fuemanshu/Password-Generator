@@ -34,5 +34,8 @@ MVP 1.1
 
 MVP 1.2
 - add a timer that auto resets the app for security/privacy
-- refactor code - use Switch cases instead of loops and if statements where possible
+- refactor code
+	- decided switch cases were not necessary
+	- removed array for characters to be removed (realized i could just use the string length and values to remove characters)
+	- added ternary operators where it made send for cleaner lines of code
 - add css

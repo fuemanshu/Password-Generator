@@ -7,6 +7,24 @@ This app generates a random password using a combination of characters from numb
 ## Technologies Used
 * **Frontend:** HTML, JavaScript
 
+- Directions for use (DESKTOP Only)
+    - Download "PasswordGeneratorWebApp1-1" Zip File
+        - click on "PasswordGeneratorWebApp.zip" file
+        - on the next screen next to the search icon "go to file" box on the right click on the three dots and click on "Download"
+        - download to desired location on your computer
+    - extract files from zip file
+    - open "index.html" file in a web browser
+    - provide your password requirements
+    - click "Generate Password" button
+    - write down your password
+    - click "Reset" button the clear the app
+
+
+Developer Ending Statement - Any questions or comments please let me know. Use at your own Peril....
+
+------------------------------------------------------------------------------------------------------------------
+Development and Version Notes
+
 090225
 Currently in Brainstorm Phase
 
@@ -33,17 +51,5 @@ App is at MVP 1.0
         - Asked one of my roommate, to test the app and provide some feedback
             - feedback - add instructions, encryption, and add ability to save passwords
 
-- Directions for use (DESKTOP Only)
-    - Download "PasswordGeneratorWebApp1-1" Zip File
-        - click on "PasswordGeneratorWebApp.zip" file
-        - on the next screen next to the search icon "go to file" box on the right click on the three dots and click on "Download"
-        - download to desired location on your computer
-    - extract files from zip file
-    - open "index.html" file in a web browser
-    - provide your password requirements
-    - click "Generate Password" button
-    - write down your password
-    - click "Reset" button the clear the app
 
 
-Developer Ending Statement - Any questions or comments please let me know. Use at your own Peril....

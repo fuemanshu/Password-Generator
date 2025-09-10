@@ -136,21 +136,11 @@
             if (passwordLength < 5) {
                 // display invalid entry message on web app
                 document.getElementById("newPasswordDisplay").innerText = "Invalid entry, try again.";
-                console.log("Invalid Entry, try again.");
 
             // generate password on valid entry
             } else if (passwordLength > 0) {
                 // Get the length of the password and turn it into an array to generate the random password
                 let passwordLengthArray = new Array(passwordLength);
-
-                // take characters to remove and put into an array
-                let charactersToRemoveArray = new Array(charactersToRemoveLength);
-
-                    // set up characters to remove array
-                    for (let i = 0; i < charactersToRemoveArray.length; i++) {
-                        charactersToRemoveArray[i] = charactersToRemove[i];
-                    }
-
                 // password variable
                 let randomPassword = "";
 
@@ -161,9 +151,9 @@
                 let finalAvailableCharacters = "";
 
                 // remove all characters user wants to remove then generate password
-                if (charactersToRemoveArray.length > 0) {                   
-                    for (let i = 0; i < charactersToRemoveArray.length; i++) {
-                        finalAvailableCharacters = availableCharacters.replace(charactersToRemoveArray[i], "");
+                if (charactersToRemove.length > 0) {                   
+                    for (let i = 0; i < charactersToRemove.length; i++) {
+                        finalAvailableCharacters = availableCharacters.replace(charactersToRemove[i], "");
                         availableCharacters = finalAvailableCharacters;
                     }
 
