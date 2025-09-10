@@ -45,24 +45,27 @@
     <br><br>
 
 </form>
-<br>
 
+
+<!--Buttons and Password Display-->
+<div>
 <!-- generate password button -->
+<br>
 <button id="generatePasswordButton">Generate Password</button>
 <br><br>
 
-<!-- Display Password-->
+<!-- Display Password once it is generated-->
 <h3 id="newPasswordDisplay"></h3>
 <br>
-
 
 <!-- generate password button -->
 <button id="resetButton">Reset</button>
 <br><br>
+</div>
 
-<!-- On Click of Generate Password Button this script will retrieve user input, create an array for the password, then generate a random password -->
+<!-- This script generates a random password based on user input-->
  <script>
-        // get reference for user inputElement
+        // get reference for password length elemnt
         const inputElementPasswordLength = document.getElementById('jsNumericInput');
 
         // get reference for password letters input Checkboxes
@@ -107,14 +110,14 @@
             if (checkboxInputLowerLetters.checked) {
                 passwordLowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
             } else {
-                console.log("letters not checked");
+                console.log("lower case letters not checked");
             }
 
             // set upper letters variable value
             if (checkboxInputUpperLetters.checked) {
                 passwordUpperCaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             } else {
-                console.log("letters not checked");
+                console.log("upper case letters not checked");
             }
 
             //set numbers variable value
@@ -131,14 +134,13 @@
                 console.log("special characters not checked");
             }
 
-            // validate passwordLength is a number or valid entry
-            // display error message if entry incorrect or generate password on correct entry
-            if (passwordLength < 5) {
+            // validate passwordLength is a number or valid entry and display messages as needed
+            if (passwordLength < 1 || userPasswordLengthInput < 5) {
                 // display invalid entry message on web app
                 document.getElementById("newPasswordDisplay").innerText = "Invalid entry, try again.";
 
             // generate password on valid entry
-            } else if (passwordLength > 0) {
+            } else if (passwordLength > 0 && userPasswordLengthInput > 4) {
                 // Get the length of the password and turn it into an array to generate the random password
                 let passwordLengthArray = new Array(passwordLength);
                 // password variable
@@ -194,7 +196,7 @@
         });
  </script>
 
-<!-- reset all fields and values by refreshing the app -->
+<!-- This script resets all fields and values by refreshing the app -->
  <script>
         resetButton.addEventListener('click', () => {
             location.reload();
