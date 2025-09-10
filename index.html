@@ -145,22 +145,30 @@
                 let randomPassword = "";
 
                 // available characters for password generation
-                const availableCharacters = passwordLetters + passwordNumbers + passwordSpecialCharacters;
-                
+                let availableCharacters = passwordLetters + passwordNumbers + passwordSpecialCharacters;
+
+                // final available characters
+                let finalAvailableCharacters = "";
+
+                // remove characters user wants to remove
+                if (charactersToRemoveArray.length > 0) {
+                    console.log("there are characters to compare");
+
+                    for (let i = 0; i < charactersToRemoveArray.length; i++) {
+                        finalAvailableCharacters = availableCharacters.replace(charactersToRemoveArray[i], "");
+                        availableCharacters = finalAvailableCharacters;
+                        console.log(i + " - " + finalAvailableCharacters);
+                    }
+                } else {
+                    console.log("there are NO characters to compare");
+                }
+
                 // generate random password and display for testing
                 for (let i = 0; i < passwordLengthArray.length; i++) {
-                    const removableCharactersArray = charactersToRemoveArray;
+                    const randomCharacter = Math.floor(Math.random() * finalAvailableCharacters.length);
 
-                    const randomCharacter = Math.floor(Math.random() * availableCharacters.length);
-                    
-                    // check random characters against characters to remove
-                    if (removableCharactersArray.length > 0) {
-                        console.log("there are characters to compare");
-                    } else {
-                        console.log("there are NO characters to compare");
-                    }
                     // combine the characters together
-                    randomPassword += availableCharacters.charAt(randomCharacter);
+                    randomPassword += finalAvailableCharacters.charAt(randomCharacter);
                 }
                 // display password for testing
                 console.log(randomPassword);
