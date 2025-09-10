@@ -37,5 +37,5 @@ MVP 1.2
 - refactor code
 	- decided switch cases were not necessary
 	- removed array for characters to be removed (realized i could just use the string length and values to remove characters)
-	- added ternary operators where it made send for cleaner lines of code
+	- revised user input data validation
 - add css

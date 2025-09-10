@@ -51,5 +51,9 @@ App is at MVP 1.0
         - Asked one of my roommate, to test the app and provide some feedback
             - feedback - add instructions, encryption, and add ability to save passwords
 
-
+091025
+- refactor code
+	- decided switch cases were not necessary
+	- removed array for characters to be removed (realized i could just use the string length and values to remove characters)
+	- revised user input data validation
 
