@@ -15,13 +15,18 @@
 <!-- Password Options Form-->
 <form>
     <!-- Length -->
-    <label>Password Length &nbsp; </label>
+    <label>Password Length: enter a number from 5 to 999 (*Required Field) &nbsp; </label>
     <input type="text" id="jsNumericInput" maxlength="3" name="jsNumericInput" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
     <br><br>
 
-    <!-- Letters Selction Checkbox-->
-    <input type="checkbox" id="lettersSelection" checked>
-    <label>Upper and Lower Case Letters</label>
+    <!-- Lower Case Letters Selection Checkbox-->
+    <input type="checkbox" id="lowerCaseLettersSelection" checked>
+    <label>Lower Case Letters</label>
+    <br><br>
+
+    <!-- Upper Case Letters Selection Checkbox-->
+    <input type="checkbox" id="upperCaseLettersSelection" checked>
+    <label>Upper Case Letters</label>
     <br><br>
 
     <!-- Numbers Selection Checkbox-->
@@ -35,8 +40,8 @@
     <br><br>
 
     <!-- Characters user doesn't want to use -->
-    <label>Characters not to be used &nbsp;</label>
-    <input type="text" id="charactersToRemove" name="charactersToRemove">
+    <label>Enter any letter, number, or special character not needed (*optional) &nbsp;</label>
+    <input type="text" id="charactersToRemove" name="charactersToRemove" oninput="this.value = this.value.replace(/ /g, '')">
     <br><br>
 
 </form>
@@ -46,20 +51,23 @@
 <button id="generatePasswordButton">Generate Password</button>
 <br><br>
 
+<!-- Display Password-->
+<h3 id="newPasswordDisplay"></h3>
+<br><br>
+
+
 <!-- generate password button -->
 <button id="resetButton">Reset</button>
 <br><br>
-
-<!-- Display Password-->
-<h3 id="newPasswordDisplay"></h3>
 
 <!-- On Click of Generate Password Button this script will retrieve user input, create an array for the password, then generate a random password -->
  <script>
         // get reference for user inputElement
         const inputElementPasswordLength = document.getElementById('jsNumericInput');
 
-        // get reference for password letters input Checkbox
-        const checkboxInputLetters = document.getElementById('lettersSelection');
+        // get reference for password letters input Checkboxes
+        const checkboxInputLowerLetters = document.getElementById('lowerCaseLettersSelection');
+        const checkboxInputUpperLetters = document.getElementById('upperCaseLettersSelection');
 
         // get reference for numbers input Checkbox
         const checkboxInputNumbers = document.getElementById('numbersSelection');
@@ -82,7 +90,8 @@
             let passwordLength = Number(userPasswordLengthInput);
 
             // declare password letters variable
-            let passwordLetters = "";
+            let passwordLowerCaseLetters = "";
+            let passwordUpperCaseletters = "";
 
             // numbers variable
             let passwordNumbers = "";
@@ -94,9 +103,16 @@
             const charactersToRemove = inputCharactersToRemove.value;
             const charactersToRemoveLength = charactersToRemove.length;
             
-            // set letters variable value
-            if (checkboxInputLetters.checked) {
-                passwordLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            // set lower letters variable value
+            if (checkboxInputLowerLetters.checked) {
+                passwordLowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+            } else {
+                console.log("letters not checked");
+            }
+
+            // set upper letters variable value
+            if (checkboxInputUpperLetters.checked) {
+                passwordUpperCaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             } else {
                 console.log("letters not checked");
             }
@@ -117,7 +133,7 @@
 
             // validate passwordLength is a number or valid entry
             // display error message if entry incorrect or generate password on correct entry
-            if (passwordLength < 1) {
+            if (passwordLength < 5) {
                 // display invalid entry message on web app
                 document.getElementById("newPasswordDisplay").innerText = "Invalid entry, try again.";
                 console.log("Invalid Entry, try again.");
@@ -139,7 +155,7 @@
                 let randomPassword = "";
 
                 // available characters for password generation
-                let availableCharacters = passwordLetters + passwordNumbers + passwordSpecialCharacters;
+                let availableCharacters = passwordLowerCaseLetters + passwordUpperCaseletters + passwordNumbers + passwordSpecialCharacters;
 
                 // final available characters
                 let finalAvailableCharacters = "";
@@ -164,7 +180,7 @@
                     console.log(randomPassword);
 
                     // display new password on the web app
-                    document.getElementById("newPasswordDisplay").innerText = "Try this Password: " + randomPassword;
+                    document.getElementById("newPasswordDisplay").innerHTML = "Try this Password: " + '<br><br>' + randomPassword;
 
                 } else {
                     console.log("there are NO characters to remove");
@@ -182,7 +198,7 @@
                     console.log(randomPassword);
 
                     // display new password on the web app
-                    document.getElementById("newPasswordDisplay").innerText = "Try this Password: " + randomPassword;
+                    document.getElementById("newPasswordDisplay").innerHTML = "Try this Password: " + '<br><br>' + randomPassword;
                 }
             }
         });
@@ -193,8 +209,6 @@
         resetButton.addEventListener('click', () => {
             location.reload();
         });
-
-
  </script>
    
 </body>
