@@ -34,6 +34,7 @@
     <label>Special Characters </label>
     <br><br>
 
+    <!-- Characters user doesn't want to use -->
     <label>Characters not to be used &nbsp;</label>
     <input type="text" id="charactersToRemove" name="charactersToRemove">
     <br><br>
@@ -41,12 +42,18 @@
 </form>
 <br>
 
-<button id="submitButton">Generate Password</button>
-
+<!-- generate password button -->
+<button id="generatePasswordButton">Generate Password</button>
 <br><br>
+
+<!-- generate password button -->
+<button id="resetButton">Reset</button>
+<br><br>
+
+<!-- Display Password-->
 <h3 id="newPasswordDisplay"></h3>
 
-<!-- On Click this script will retrieve user input, create an array for the password, then generate a random password -->
+<!-- On Click of Generate Password Button this script will retrieve user input, create an array for the password, then generate a random password -->
  <script>
         // get reference for user inputElement
         const inputElementPasswordLength = document.getElementById('jsNumericInput');
@@ -64,10 +71,10 @@
         const inputCharactersToRemove = document.getElementById('charactersToRemove');
 
         // get a reference to the button - to trigger storage
-        const submitButton = document.getElementById('submitButton');
+        const generatePasswordButton = document.getElementById('generatePasswordButton');
         
         // event listener to trigger storage
-        submitButton.addEventListener('click', () => {
+        generatePasswordButton.addEventListener('click', () => {
             // get value entered by user
             const userPasswordLengthInput = inputElementPasswordLength.value;
             
@@ -87,21 +94,21 @@
             const charactersToRemove = inputCharactersToRemove.value;
             const charactersToRemoveLength = charactersToRemove.length;
             
-            // set letters variable if checkbox is checked
+            // set letters variable value
             if (checkboxInputLetters.checked) {
                 passwordLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             } else {
                 console.log("letters not checked");
             }
 
-            //set numbers variable if checkbox is checked
+            //set numbers variable value
             if (checkboxInputNumbers.checked) {
                 passwordNumbers = "1234567890";
             } else {
                 console.log("numbers not checked");
             }
 
-            // set special character variable
+            // set special character variable value
             if (checkboxInputSpecialCharacters.checked) {
                 passwordSpecialCharacters = "!@#$%^&*()<>/?[]{}-=_+";
             } else {
@@ -111,10 +118,11 @@
             // validate passwordLength is a number or valid entry
             // display error message if entry incorrect or generate password on correct entry
             if (passwordLength < 1) {
-                // display new password on the web app
+                // display invalid entry message on web app
                 document.getElementById("newPasswordDisplay").innerText = "Invalid entry, try again.";
                 console.log("Invalid Entry, try again.");
 
+            // generate password on valid entry
             } else if (passwordLength > 0) {
                 // Get the length of the password and turn it into an array to generate the random password
                 let passwordLengthArray = new Array(passwordLength);
@@ -136,14 +144,14 @@
                 // final available characters
                 let finalAvailableCharacters = "";
 
-                // remove characters user wants to remove
-                if (charactersToRemoveArray.length > 0) {
+                // remove all characters user wants to remove then generate password
+                if (charactersToRemoveArray.length > 0) {                   
                     for (let i = 0; i < charactersToRemoveArray.length; i++) {
                         finalAvailableCharacters = availableCharacters.replace(charactersToRemoveArray[i], "");
                         availableCharacters = finalAvailableCharacters;
                     }
 
-                    // generate random password and display for testing
+                    // generate random password
                     for (let i = 0; i < passwordLengthArray.length; i++) {
                         finalAvailableCharacters = availableCharacters;
                         
@@ -178,6 +186,15 @@
                 }
             }
         });
+ </script>
+
+<!-- reset all fields and values by refreshing the app -->
+ <script>
+        resetButton.addEventListener('click', () => {
+            location.reload();
+        });
+
+
  </script>
    
 </body>
