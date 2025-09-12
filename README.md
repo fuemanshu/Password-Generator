@@ -9,7 +9,7 @@ This app generates a random password using a combination of characters from numb
 
 - DESKTOP Directions
     - go to https://github.com/fuemanshu/Password-Generator
-    - click on the zip file - "PasswordGeneratorWebApp1-1" 
+    - click on the zip file - "PasswordGeneratorWebApp1-2" 
         - on the next screen next to the search field -  "go to file", click on the three dots then click on "Download"
         - download to desired location on your computer
     - extract files from zip file
