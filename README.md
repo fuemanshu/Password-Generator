@@ -13,7 +13,7 @@ This app generates a random password using a combination of characters from numb
         - on the next screen next to the search field -  "go to file", click on the three dots then click on "Download"
         - download to desired location on your computer
     - extract files from zip file
-    - Open "index.html" file (it will open in your default web browser)
+    - Open "PasswordGeneratorApp.html" file (it will open in your default web browser)
         - provide your password requirements
         - click "Generate Password" button
         - write down your password
@@ -21,13 +21,13 @@ This app generates a random password using a combination of characters from numb
 
 - MOBILE Directions (Android)
     - go to https://github.com/fuemanshu/Password-Generator
-    - click on the "index.html" file link
-    - Download "index.html" file
+    - click on the "PasswordGeneratorApp.html" file link
+    - Download "PasswordGeneratorApp.html" file
         - on the next screen on the right where it says "Raw" there is a download icon (arrow pointing down)
             - click on it
         - this downloads it to your mobile device
             - download folder location may vary for each mobile device so check your download folder location
-    - open "index.html" file (it will open in your default web browser)
+    - open "PasswordGeneratorApp.html" file (it will open in your default web browser)
     - provide your password requirements
     - click "Generate Password" button
     - write down your password
@@ -47,7 +47,7 @@ Currently in Brainstorm Phase
 App is at MVP 1.0
 - Accepts User Input, creates an array, generates random password and displays on the application and console.
 
-- Characters for random password are in the "availableCharacters" variable in the script in the Index.html file. Make a change to these characters if you want to use different characters. I plan to add options to include/exlude certain characters based on user need.
+- Characters for random password are in the "availableCharacters" variable in the script in the PasswordGeneratorApp.html file. Make a change to these characters if you want to use different characters. I plan to add options to include/exlude certain characters based on user need.
 
 090525
 - Password Generator Web App Zip file added for non develops to use/test
