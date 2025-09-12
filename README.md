@@ -9,7 +9,7 @@ This app generates a random password using a combination of characters from numb
 
 - DESKTOP Directions
     - go to https://github.com/fuemanshu/Password-Generator
-    - click on the zip file - "PasswordGeneratorWebApp1-2" 
+    - click on the zip file - "Password Generator App 1-2" 
         - on the next screen next to the search field -  "go to file", click on the three dots then click on "Download"
         - download to desired location on your computer
     - extract files from zip file
@@ -72,3 +72,10 @@ App is at MVP 1.0
 	- removed array for characters to be removed (realized i could just use the string length and values to remove characters)
 	- revised user input data validation
 
+091225
+- added reset timer
+- added CSS styling
+- revised password length form field (placeholder text)
+- revised checkbox selections so the labels and check box are selectable
+- revised character removal formatting
+- updated readme instructions for desktop and mobile
