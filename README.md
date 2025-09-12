@@ -7,13 +7,27 @@ This app generates a random password using a combination of characters from numb
 ## Technologies Used
 * **Frontend:** HTML, JavaScript
 
-- Directions for use (DESKTOP Only)
-    - Download "PasswordGeneratorWebApp1-1" Zip File
-        - click on "PasswordGeneratorWebApp.zip" file
-        - on the next screen next to the search icon "go to file" box on the right click on the three dots and click on "Download"
+- DESKTOP Directions
+    - go to https://github.com/fuemanshu/Password-Generator
+    - click on the zip file - "PasswordGeneratorWebApp1-1" 
+        - on the next screen next to the search field -  "go to file", click on the three dots then click on "Download"
         - download to desired location on your computer
     - extract files from zip file
-    - open "index.html" file in a web browser
+    - Open "index.html" file (it will open in your default web browser)
+        - provide your password requirements
+        - click "Generate Password" button
+        - write down your password
+        - click "Reset" button the clear the app
+
+- MOBILE Directions (Android)
+    - go to https://github.com/fuemanshu/Password-Generator
+    - click on the "index.html" file link
+    - Download "index.html" file
+        - on the next screen on the right where it says "Raw" there is a download icon (arrow pointing down)
+            - click on it
+        - this downloads it to your mobile device
+            - download folder location may vary for each mobile device so check your download folder location
+    - open "index.html" file (it will open in your default web browser)
     - provide your password requirements
     - click "Generate Password" button
     - write down your password
@@ -21,6 +35,7 @@ This app generates a random password using a combination of characters from numb
 
 
 Developer Ending Statement - Any questions or comments please let me know. Use at your own Peril....
+
 
 ------------------------------------------------------------------------------------------------------------------
 Development and Version Notes
