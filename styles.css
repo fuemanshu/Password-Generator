@@ -1,0 +1,24 @@
+/* default app styling*/
+body {
+    font-family: Verdana;
+}
+
+p {
+    font-weight: bold;
+}
+/* form styling */
+form {
+    font-size: 16px;
+}
+
+/* button styling */
+button {
+    font-family: Verdana;
+    font-size: 14px;
+
+    background-color: lightgray;
+}
+
+.mybuttons:hover {
+    background-color: lightgreen;
+}
